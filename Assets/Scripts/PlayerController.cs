@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         if (velocityVsUp > maxSpeed && accelerationInput > 0)
             return;
 
-        if (velocityVsUp < -maxSpeed * 0.25f && accelerationInput < 0)
+        if (velocityVsUp < -maxSpeed * 0.5f && accelerationInput < 0)
             return;
 
         if (rb.velocity.sqrMagnitude > maxSpeed * maxSpeed && accelerationInput > 0)
