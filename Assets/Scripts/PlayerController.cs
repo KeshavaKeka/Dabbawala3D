@@ -77,9 +77,10 @@ public class PlayerController : MonoBehaviour
     {
         if (rb.velocity.magnitude > 0.1f)
         {
-            float turnAngle = steeringInput * turnFactor * Time.fixedDeltaTime;
+            //float turnAngle = steeringInput * turnFactor * Time.fixedDeltaTime;
+            rotationAngle = steeringInput * turnFactor * Time.fixedDeltaTime;
 
-            Quaternion turnRotation = Quaternion.Euler(0f, turnAngle, 0f);
+            Quaternion turnRotation = Quaternion.Euler(0f, rotationAngle, 0f);
 
             rb.MoveRotation(rb.rotation * turnRotation);
         }
