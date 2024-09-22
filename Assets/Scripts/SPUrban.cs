@@ -31,7 +31,7 @@ public class SPUrban : MonoBehaviour
             occupiedPositions.Add(InstantiatePrefabAtRandomPosition(list1));
             occupiedPositions.Add(InstantiatePrefabAtRandomPosition(list2));
             occupiedPositions.Add(InstantiatePrefabAtRandomPosition(list3));
-            occupiedPositions.Add(InstantiatePrefabAtRandomPosition(list4)); // Added list4
+            occupiedPositions.Add(InstantiatePrefabAtRandomPosition(list4));
 
             // Combine list2 and list3 to find an available position for the second prefab
             List<Transform> combinedList = new List<Transform>();
