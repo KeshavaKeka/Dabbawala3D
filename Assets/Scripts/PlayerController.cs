@@ -76,13 +76,13 @@ public class PlayerController : MonoBehaviour
         {
             capacity = 7;
             maxSpeed = 5f;
-            turnFactor = 180;
+            turnFactor = 150;
         }
         if (loc1 + loc2 + loc3 + loc4 <= 10)
         {
             capacity = 10;
             maxSpeed = 7f;
-            turnFactor = 210;
+            turnFactor = 180;
         }
     }
 
