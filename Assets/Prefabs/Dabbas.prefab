@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6802465096098838580}
   - component: {fileID: 2314105225376391024}
   - component: {fileID: 8953175225671967114}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dabbas
-  m_TagString: Untagged
+  m_TagString: dabbas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

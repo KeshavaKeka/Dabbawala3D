@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Objective")]
+    public float loc1 = 6;
+    public float loc2 = 6;
+    public float loc3 = 8;
     [Header("Player Settings")]
     public float driftFactor = 0.3f; // Not as applicable in 3D but can be tweaked for lateral friction
     public float accelerationFactor = 5f;
     public float turnFactor = 5f;
     public float maxSpeed = 10f;
-
+    public float capacity;
     float accelerationInput = 0;
     float steeringInput = 0;
 
@@ -27,7 +31,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -93,5 +97,18 @@ public class PlayerController : MonoBehaviour
     {
         steeringInput = input.x;
         accelerationInput = input.y;
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("dabbas"))
+        {
+            Debug.Log("Dabbas");
+        }
+        else if(other.gameObject.CompareTag("delivery"))
+        {
+            Debug.Log("Delivery");
+        }
     }
 }
