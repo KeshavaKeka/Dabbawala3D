@@ -170,8 +170,8 @@ public class PlayerController : MonoBehaviour
                 {
                     if (loc1 > content)
                     {
-                        content = 0;
                         loc1 -= content;
+                        content = 0;
                     }
                     else
                     {
@@ -183,8 +183,8 @@ public class PlayerController : MonoBehaviour
                 {
                     if (loc2 > content)
                     {
-                        content = 0;
                         loc2 -= content;
+                        content = 0;
                     }
                     else
                     {
@@ -196,8 +196,8 @@ public class PlayerController : MonoBehaviour
                 {
                     if (loc3 > content)
                     {
-                        content = 0;
                         loc3 -= content;
+                        content = 0;
                     }
                     else
                     {
@@ -209,8 +209,8 @@ public class PlayerController : MonoBehaviour
                 {
                     if (loc4 > content)
                     {
-                        content = 0;
                         loc4 -= content;
+                        content = 0;
                     }
                     else
                     {
