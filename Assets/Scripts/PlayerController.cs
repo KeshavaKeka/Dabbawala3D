@@ -161,70 +161,66 @@ public class PlayerController : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if(Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             Debug.Log("Pressed E");
+
             if (other.gameObject.CompareTag("delivery"))
             {
                 if (other.gameObject == firstPrefabInstance1)
                 {
-                    if (loc1 > content)
-                    {
-                        loc1 -= content;
-                        content = 0;
-                    }
-                    else
-                    {
-                        content -= loc1;
-                        loc1 = 0;
-                    }
+                    Debug.Log("Detected: firstPrefabInstance1");
+                    HandleDelivery(ref loc1);
                 }
                 else if (other.gameObject == firstPrefabInstance2)
                 {
-                    if (loc2 > content)
-                    {
-                        loc2 -= content;
-                        content = 0;
-                    }
-                    else
-                    {
-                        content -= loc2;
-                        loc2 = 0;
-                    }
+                    Debug.Log("Detected: firstPrefabInstance2");
+                    HandleDelivery(ref loc2);
                 }
                 else if (other.gameObject == firstPrefabInstance3)
                 {
-                    if (loc3 > content)
-                    {
-                        loc3 -= content;
-                        content = 0;
-                    }
-                    else
-                    {
-                        content -= loc3;
-                        loc3 = 0;
-                    }
+                    Debug.Log("Detected: firstPrefabInstance3");
+                    HandleDelivery(ref loc3);
+                }
+                else if (other.gameObject == firstPrefabInstance4)
+                {
+                    Debug.Log("Detected: firstPrefabInstance4");
+                    HandleDelivery(ref loc4);
                 }
                 else
                 {
-                    if (loc4 > content)
-                    {
-                        loc4 -= content;
-                        content = 0;
-                    }
-                    else
-                    {
-                        content -= loc4;
-                        loc4 = 0;
-                    }
+                    Debug.Log("Unknown Delivery Object");
                 }
             }
-            else if(other.gameObject.CompareTag("dabbas"))
+            else if (other.gameObject.CompareTag("dabbas"))
             {
+                Debug.Log("Dabbas detected");
                 content += (capacity - content);
             }
-            obj.text = $"Pending - \nLoc1: {loc1}\nLoc2: {loc2}\nLoc3: {loc3}\nLoc4: {loc4}";
-            cont.text = $"Dabbas: {content}\nCapacity: {capacity}";
+
+            UpdateUI();
         }
+    }
+
+    // Helper method for delivery handling
+    private void HandleDelivery(ref int loc)
+    {
+        if (loc > content)
+        {
+            loc -= content;
+            content = 0;
+        }
+        else
+        {
+            content -= loc;
+            loc = 0;
+        }
+    }
+
+    // Update the text UI
+    private void UpdateUI()
+    {
+        obj.text = $"Pending - \nLoc1: {loc1}\nLoc2: {loc2}\nLoc3: {loc3}\nLoc4: {loc4}";
+        cont.text = $"Dabbas: {content}\nCapacity: {capacity}";
     }
 }
